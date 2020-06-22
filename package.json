@@ -1,0 +1,144 @@
+{
+  "name": "spotishake-web",
+  "license": "MIT",
+  "description": "Project template for React-based Typescript client web applications, using Ant Design and Apollo GraphQL with types generator",
+  "keywords": [
+    "boilerplate",
+    "react",
+    "create-react-app",
+    "typescript",
+    "graphql",
+    "apollo-client",
+    "ant-design"
+  ],
+  "homepage": "https://example.hiberbee.dev/react-antd-typescript-graphql",
+  "readme": "README.md",
+  "bugs": {
+    "url": "https://github.com/Hiberbee/react-antd-typescript-graphql/issues/new?assignees=vladyslavvolkov&labels=bug&template=bug_report.md&title=",
+    "email": "spotishake@hiberbee.com"
+  },
+  "version": "1.0.0",
+  "author": {
+    "name": "Vlad Volkov",
+    "url": "https://github.com/vladyslavvolkov",
+    "email": "vlad@hiberbee.com"
+  },
+  "maintainers": [
+    {
+      "name": "Vlad Volkov",
+      "url": "https://github.com/vladyslavvolkov",
+      "email": "vlad@hiberbee.com"
+    }
+  ],
+  "private": true,
+  "engines": {
+    "yarn": ">=1.20"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.1",
+    "@apollo/client": "^3.0.0-rc.6",
+    "@apollo/react-common": "^4.0.0-beta.1",
+    "@apollo/react-components": "^4.0.0-beta.1",
+    "@apollo/react-hoc": "^4.0.0-beta.1",
+    "@apollo/react-hooks": "^4.0.0-beta.1",
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "antd": "^4.3.5",
+    "graphql": "^15.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.3.19",
+    "@graphql-codegen/cli": "^1.15.4",
+    "@graphql-codegen/introspection": "^1.15.4",
+    "@graphql-codegen/typescript": "^1.15.4",
+    "@graphql-codegen/typescript-operations": "^1.15.4",
+    "@graphql-codegen/typescript-react-apollo": "^1.15.4",
+    "@testing-library/react": "^10.3.0",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@types/jest": "^26.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "prettier": "^2.0.5"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "printWidth": 100,
+    "endOfLine": "auto",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "eslintIgnore": [
+    "*.log",
+    ".env*",
+    ".eslintcache",
+    "build",
+    "node_modules",
+    "package.json",
+    "public"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {},
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "scripts": {
+    "start": "serve -s build",
+    "watch": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "graphql": "graphql-codegen",
+    "storybook": "start-storybook",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.min.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Lato', sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Fira Code', monospace;
+}

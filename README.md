@@ -1,1 +1,1 @@
-# react-antd-typescript
+# React / Ant Design / Typescript

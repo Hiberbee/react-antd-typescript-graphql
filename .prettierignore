@@ -1,0 +1,7 @@
+*.log
+build
+node_modules/
+.eslintcache
+.env*
+public
+templates

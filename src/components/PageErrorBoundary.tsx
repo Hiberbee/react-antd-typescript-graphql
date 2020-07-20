@@ -1,11 +1,15 @@
-import React, { ErrorInfo } from 'react'
+import React from 'react'
 import { Result } from 'antd'
 
-type Props = {}
+type Props = {
+  children?: React.ReactNode
+}
+
 type State = {
   hasError: boolean
   message: string
 }
+
 export default class PageErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -17,7 +21,7 @@ export default class PageErrorBoundary extends React.Component<Props, State> {
     return { hasError: true, message: error.message }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     // You can also log the error to an error reporting service
     console.error(`${error.message} @ ${errorInfo.componentStack}`)
   }

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: template-typescript-react-ant
+build:
+  tagPolicy:
+    sha256: {}
+  local:
+    useBuildkit: true
+    push: false
+    useDockerCLI: false
+  artifacts:
+  - image: node
+
+test:
+  - image: node
+    structureTests: [structure-test.yaml]

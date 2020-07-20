@@ -1,1 +1,1 @@
-# React / Ant Design / Typescript
+# Project Template: Typescript / React / Ant Design

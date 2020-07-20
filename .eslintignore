@@ -1,0 +1,7 @@
+*.log
+.env*
+.eslintcache
+build
+node_modules
+package.json
+public

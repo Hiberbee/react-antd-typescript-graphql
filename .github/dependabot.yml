@@ -1,0 +1,17 @@
+version: 2
+
+update_configs:
+  - package_manager: javascript
+    directory: "/"
+    update_schedule: weekly
+    default_asignees:
+      - vladyslavvolkov
+    default_reviewers:
+      - vladyslavvolkov
+  - package_manager: docker
+    directory: "/"
+    update_schedule: weekly
+    default_asignees:
+      - vladyslavvolkov
+    default_reviewers:
+      - vladyslavvolkov

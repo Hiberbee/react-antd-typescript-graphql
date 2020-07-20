@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import App from 'src/components/App'
-import * as serviceWorker from './serviceWorker'
+import { render } from 'react-dom'
+import { App } from 'src/components/App/App'
+import { register } from 'src/serviceWorker'
 
-ReactDOM.render(
+render(
   // FIXME: https://github.com/ant-design/ant-design/issues/22493
   // <React.StrictMode>
   <App />,
@@ -14,4 +14,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+register()

@@ -1,14 +1,12 @@
 {
   "name": "template-react-antd-ts-graphql",
   "description": "Project template for React-based Ant-designed Typescript client web apps",
+  "homepage": "https://hiberbee.github.io/template-typescript-react-ant",
   "keywords": [
-    "boilerplate",
     "project-template",
     "react",
     "create-react-app",
     "typescript",
-    "graphql",
-    "apollo-client",
     "antd-design"
   ],
   "readme": "README.md",

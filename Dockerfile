@@ -1,20 +1,20 @@
 ARG nodeVersion=14
 FROM node:${nodeVersion}-alpine AS node
 
-FROM node AS build
+FROM node AS template
 WORKDIR /usr/local/src
-ARG env=production
-ENV NODE_ENV=${env}
-COPY package.json yarn.lock ./
-RUN yarn
-COPY . .
-RUN yarn test --watchAll=false \
+ONBUILD ARG env=production
+ONBUILD ENV NODE_ENV=${env}
+ONBUILD COPY package.json yarn.lock ./
+ONBUILD RUN yarn
+ONBUILD COPY . .
+ONBUILD RUN yarn test --watchAll=false \
  && yarn build
 
-FROM node
+FROM template
 WORKDIR /usr/local/src
 COPY --from=build /usr/local/src/build .
 EXPOSE 3000
 RUN npm i -g serve
-ENTRYPOINT ["serve"]
+ENTRYPOINT ["node"]
 CMD ["serve", "-s", ".", "--listen=3000"]

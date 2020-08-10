@@ -52,7 +52,7 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.2.1",
+    "@ant-design/icons": "^4.2.2",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",

@@ -1,12 +1,12 @@
-name: Lint workflow
+name: Lint
 on: [push]
 jobs:
-  build:
-    name: Lint Code Base
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+
       - name: Lint Code
         uses: docker://github/super-linter:v3
         env:

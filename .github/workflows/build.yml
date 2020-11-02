@@ -1,8 +1,10 @@
-name: Build workflow
-on: [push]
+name: Build
+on:
+  push:
+    paths:
+      - src/**
 jobs:
   docker-image:
-    name: Build Docker image
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout sources

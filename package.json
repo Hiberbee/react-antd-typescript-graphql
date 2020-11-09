@@ -43,7 +43,7 @@
     "@types/react-dom": "^16.9.9",
     "@types/react-router-dom": "^5.1.6",
     "@ant-design/icons": "^4.2.2",
-    "antd": "^4.8.0",
+    "antd": "^4.8.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-intl": "^5.8.8",

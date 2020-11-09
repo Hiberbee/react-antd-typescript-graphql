@@ -1,4 +1,4 @@
-FROM node:14-alpine AS template
+FROM node:15-alpine AS template
 WORKDIR /usr/local/src
 ONBUILD COPY package.* ./
 ONBUILD RUN npm i --no-progress

@@ -1,15 +1,15 @@
-apiVersion: skaffold/v2beta8
+apiVersion: skaffold/v2beta9
 kind: Config
 metadata:
-  name: template-typescript-react-ant
+  name: template-typescript-react
 build:
-  tagPolicy:
-    sha256: {}
-  local:
-    concurrency: 0
-    useBuildkit: true
-    push: false
-    useDockerCLI: false
   artifacts:
-  - image: nginx
-
+    - image: template-typescript-react/node
+  tagPolicy:
+    sha256:
+    gitCommit:
+      variant: AbbrevCommitSha
+  local:
+    push: false
+    useBuildkit: true
+    concurrency: 0

@@ -1,0 +1,43 @@
+name: Development
+on:
+  push:
+    branches-ignore:
+      - dependabot/**
+      - feature/**
+      - master
+      - latest
+      - main
+    paths:
+      - .github/workflows/development.yml
+      - package.json
+      - Dockerfile
+      - src/**/*
+      - public/**/*
+jobs:
+  docker:
+    name: Docker image update
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Get tag name
+        id: git
+        run: echo ::set-output name=sha::$(git rev-parse --short HEAD)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to Docker Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - name: Build Docker image
+        id: docker
+        uses: docker/build-push-action@v2
+        with:
+          tags: |
+            ${{ github.repository }}/node:latest
+            ${{ github.repository }}/node:${{ steps.git.outputs.sha }}
+          push: false
+    outputs:
+      image: ${{ github.repository }}/node:${{ steps.git.outputs.sha }}@${{ steps.docker.outputs.digest }}
+

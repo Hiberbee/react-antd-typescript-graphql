@@ -1,7 +1,9 @@
-*.log
-.env*
-.eslintcache
-build
-node_modules
-package.json
 public
+build
+.storybook
+.vscode
+.git*
+**/*.ts
+**/*.json
+**/*.svg
+**/*.png

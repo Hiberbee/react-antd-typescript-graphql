@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    image: template-typescript-react/node:latest
+    working_dir: /usr/local/src
+    command: run
+    volumes:
+      - .:/usr/local/src
+    ports:
+      - 80:80
+

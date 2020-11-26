@@ -1,7 +1,11 @@
-*.log
-.env*
-.eslintcache
 build
-node_modules
-package.json
 public
+.storybook
+.vscode
+.git*
+**/*.scss
+**/*.json
+**/*.png
+**/*.svg
+src/antd
+webpack.*.js

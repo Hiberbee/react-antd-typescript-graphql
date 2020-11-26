@@ -1,0 +1,15 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "eslint.lintTask.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "files.autoSave": "onFocusChange",
+  "npm.packageManager": "yarn",
+  "prettier.enable": true,
+  "prettier.endOfLine": "auto",
+  "prettier.packageManager": "yarn",
+  "prettier.stylelintIntegration": true,
+  "terminal.integrated.automationShell.windows": "ps"
+}

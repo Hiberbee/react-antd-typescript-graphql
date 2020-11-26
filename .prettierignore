@@ -1,8 +1,7 @@
-*.log
+.git*
+.idea
+node_modules
 build
-node_modules/
-.eslintcache
-.env*
 public
-templates
-.storybook
+**/*.svg
+src/antd

@@ -1,24 +1,35 @@
-name: Build
+name: Stage
 on:
+  release:
+    types:
+      - unpublished
   push:
-    paths:
-      - src/**
+    branches-ignore:
+      - master
+      - main
 jobs:
-  docker-image:
+  environment:
+    name: Setup environment
     runs-on: ubuntu-20.04
+    env:
+      NODE_ENV: development
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-      - name: Build Docker image
-        uses: docker/build-push-action@master
-        env:
-          DOCKER_BUILDKIT: 1
-          NODE_ENV: production
+      - name: Install NodeJS
+        uses: actions/setup-node@v2-beta
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.pkg.github.com/hiberbee/template-typescript-react-ant
-          repository: node
-          push: true
-          tags: latest
-          build_args: env=$NODE_ENV
+          node-version: '15'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --no-interaction
+  lint:
+    name: Lint sources
+    runs-on: ubuntu-20.04
+    needs: [ environment ]
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --no-interaction
+      - name: Run linters
+        run: yarn lint

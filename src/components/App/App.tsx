@@ -1,8 +1,9 @@
-import React, { lazy, ReactElement, Suspense } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'src/components/App/App.less'
+
 import { ConfigProvider, Result, Spin } from 'antd'
+import React, { ReactElement, Suspense, lazy } from 'react'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import DefaultLayout from 'src/layouts/DefaultLayout'
-import 'src/components/App/App.css'
 
 const Index = lazy(() => import('../../routes/Home'))
 const About = lazy(() => import('../../routes/About'))

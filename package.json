@@ -1,5 +1,5 @@
 {
-  "name": "template-typescript-react",
+  "name": "@hiberbee/template-typescript-react",
   "description": "Project template for React-based Ant-designed Typescript client web apps",
   "version": "1.0.0",
   "keywords": [
@@ -33,44 +33,74 @@
     }
   ],
   "private": true,
-  "engines": {
-    "yarn": ">=1.20"
-  },
+  "homepage": "https://portal.peoplevine.bndigital.co",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^11.1.0",
-    "@types/react": "^16.9.55",
-    "@types/react-dom": "^16.9.9",
-    "@types/react-router-dom": "^5.1.6",
-    "@ant-design/icons": "^4.2.2",
-    "antd": "^4.8.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-intl": "^5.8.8",
+    "ahooks": "^2.9.1",
+    "antd": "^4.8.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-intl": "^5.10.5",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "^4.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.6",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
-    "eslint": "^7.12.1",
+    "@craco/craco": "^5.8.0",
+    "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addons": "^6.1.6",
+    "@storybook/cli": "^6.1.6",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/ui": "^6.1.6",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "babel-loader": "8.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.14.0",
+    "craco-less": "^1.17.0",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-config-stylelint": "^13.1.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.1.2",
-    "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
-    "stylelint": "^13.7.2",
-    "typescript": "^4.0.5"
+    "prettier": "^2.2.0",
+    "prettier-plugin-sorted": "^2.0.0",
+    "storybook-addon-designs": "^5.4.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "build": "craco build && build-storybook --output-dir=build/storybook --static-dir=public",
+    "format": "stylelint --fix src && eslint --fix src",
+    "test": "craco test --watchAll",
+    "lint": "yarn lint:styles && yarn lint:scripts",
+    "start": "serve --listen=80 build",
+    "start:storybook": "serve --listen=80 build/storybook",
+    "run": "craco start",
+    "run:storybook": "start-storybook -p 6006 --static-dir=public"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.20.0"
+  },
+  "cracoConfig": "webpack.config.js",
+  "importSort": {
+    "parser": "typescript",
+    ".js,jsx,.ts,.tsx": {
+      "options": {
+        "wildcardAtStart": true
+      }
+    }
   },
   "browserslist": {
     "production": [

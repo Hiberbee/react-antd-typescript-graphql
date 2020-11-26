@@ -5,8 +5,13 @@ on:
       - unpublished
   push:
     branches-ignore:
-      - master
-      - main
+      - latest
+    paths:
+      - .github/workflows/stage.yml
+      - package.json
+      - Dockerfile
+      - src/**/*
+      - public/**/*
 jobs:
   environment:
     name: Setup environment

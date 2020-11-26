@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:jsx-a11y/recommended", "plugin:react/recommended"],
   "ignorePatterns": ["build", ".storybook"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -9,9 +9,18 @@
       "jsx": true
     }
   },
-  "plugins": ["react-hooks"],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["react-hooks", "jsx-a11y"],
   "rules": {
+    "react/prop-types": "off",
     "@typescript-eslint/member-delimiter-style": "off"
   },
-  "settings": {}
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

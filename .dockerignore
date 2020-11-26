@@ -1,15 +1,11 @@
 *.iml
 *.log
+*ignore
 .env*
 .git*
 .idea
-.pnp
-.pnp.js
 .vscode
 Dockerfile
 build
+docker-compose*.yml
 node_modules
-public/**/*.css
-public/**/*.js
-public/**/*.map
-!public/service-worker.js

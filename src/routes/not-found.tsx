@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
 import { Result } from 'antd'
+import React from 'react'
 
-export default function NotFound(): ReactElement {
+export default function NotFound(): JSX.Element {
   return <Result status={'404'} title={'Requested page not found'} />
 }

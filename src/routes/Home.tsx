@@ -1,6 +1,13 @@
-import React, { ReactElement } from 'react'
-import { Typography } from 'antd'
+import { Layout, Typography } from 'antd'
+import React from 'react'
 
-export default function Home(): ReactElement {
-  return <Typography.Title>Index Page</Typography.Title>
+import { Context } from '../components'
+
+export default function Home(): JSX.Element {
+  return (
+    <Layout.Content>
+      <Typography.Title>Home Page</Typography.Title>
+      <Context.Consumer>{({ user }) => <Typography.Text>{user?.firstName}</Typography.Text>}</Context.Consumer>
+    </Layout.Content>
+  )
 }
